@@ -47,9 +47,9 @@ class Profesor():
             print(f"El profesor {self.name} esta registrado en {course.name}")
 
 class Materias():
-    def __init__(self, name, group):
-        self.name = name
-        self.grupo = group
+    def __init__(self, nombre, grupo):
+        self.name = nombre
+        self.grupo = grupo
         self.students = []
         self.professor = []
 
@@ -80,6 +80,7 @@ class Materias():
             print(f"El curso de {self.name} no tiene estudiantes")
 
 
+#RETO 3
 class Examen():                                                             
     def __init__(self, tema , porcentaje, preguntas):
         self.topic = tema
@@ -90,6 +91,8 @@ class Examen():
     def _str_(self):
         txt = "Examen de: {0} - valor: {1} - Preguntas: {2} - del {3} curso"
         return txt.format(self.topic, self.percent, self.question, self.course)
+
+
 
 
 student1 = Estudiantes("Flavia", "1001")
@@ -130,7 +133,7 @@ course1.remove_student(student1)
 course1.get_student()
 
 teacher1.createExam("Productos notables", "15%", "10", course1) 
-print(teacher1.exams[0])
+print(teacher1.exams[0].topic)
 
 teacher2.createExam("algebra booleana", "20%", "5", course2)
-print(teacher2.exams[0])
+print(teacher2.exams[0].percent)
