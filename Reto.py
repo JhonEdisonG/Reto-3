@@ -9,7 +9,7 @@ class Estudiantes():
         return txt.format(self.name, self.id, self.enrCourses)
 
     def enr_C(self, curso):
-        if curso == curso in self.enrCourses:
+        if curso in self.enrCourses:
             print(f"Ya esta matriculado en {curso.name}, no puede matricular")
         else:
             self.enrCourses.append(curso)
@@ -17,7 +17,7 @@ class Estudiantes():
             print("Matriculado")
 
     def cancel_C(self,course):
-        if course == course in self.enrCourses:
+        if course in self.enrCourses:
             self.enrCourses.remove(course)
         else:
             print("No esta matriculado")
@@ -39,7 +39,7 @@ class Profesor():
         self.exams.append(exam)
 
     def teach(self, course):                
-        if course == course in self.courses:
+        if course in self.courses:
             print(f"Enseñando en el curso de {course.name}")
         else:
             self.courses.append(course)
@@ -64,7 +64,7 @@ class Materias():
         return print(studentsList)
 
     def remove_student(self, stud):
-        if stud == stud in self.students:
+        if stud in self.students:
             self.students.remove(stud)
             print(f"El estudiante {stud.name} removido del curso de {self.name}")
         else:
